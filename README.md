@@ -3,7 +3,8 @@
 ## Requisits CafeFlow
 ***
 
-### Requisits Visuals:
+### **Requisits Visuals:**
+---
 
 La aplicació ha de contenir les següents pantalles:
 - ActivityLogin
@@ -48,3 +49,15 @@ S'ha de veure un llistat de tots els Postres disponibles i afegir begudes a la t
 ### FragmentTotal
 
 S'ha de poder visualitzar tots els productes triats per l'usuari i un botó de pagar.
+
+### **Requisits funcionals**
+---
+
+L'aplicació de Cafe flow ha de cumplir uns requisits funcionals mínims que són:
+
+- Les dades de ActivityLogin i ActivityRegistre s'han de **guardar de manera persistent** utilitzant **SharedPreferences**
+- Menjars, Begudes, Postres i Pagament han de ser **Fragments**.
+- Menjars, Begudes i Postres han de mostrar el llistat de productes amb un **RecyclerView** i permetre afegir productes a la cistella.
+- Pagament ha de tenir un **RecyclerView** amb els productes triats i es podrà pagar la comanda. Quan es paga una comanda es guarda un **registre a la BBDD** amb el preu i l'usuari que ha pagat.
+- Cada fragment ha de tenir el seu propi **ViewModel** corresponent.
+- S'ha de crear un **SharedViewModel** per poder compartir dades entre fragments.
