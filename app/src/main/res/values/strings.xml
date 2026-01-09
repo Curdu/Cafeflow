@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Cafeflow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="crear_compte_link"><u>No tens compte? Registra\'t</u></string>
+    <string name="iniciar_sessio_link"><u>Ja tens compte? Inicia sessió</u></string>
+    <string name="SP_key">SharedPreferenceKey</string>
+    <string name="quantitat_usuaris_SP">QuantitatUsuaris</string>
+    <string name="error_usuari_no_existent">L\'usuari no existeix</string>
 </resources>

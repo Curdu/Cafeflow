@@ -10,11 +10,18 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Cafeflow">
+        android:theme="@style/Base.Theme.Cafeflow">
         <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.App.SplashScreen"
-            android:exported="true">
+            android:name=".a_views.MenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".a_views.RegistreActivity"
+            android:exported="false"
+            android:theme="@style/Base.Theme.Cafeflow"/>
+        <activity
+            android:name=".a_views.LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.App.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
