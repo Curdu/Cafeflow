@@ -55,4 +55,6 @@ dependencies {
     implementation("androidx.core:core-splashscreen:1.0.0")
     implementation("androidx.room:room-runtime:2.8.4")
     implementation("androidx.room:room-ktx:2.6.1")
+    implementation("androidx.navigation:navigation-fragment:2.4.1")
+    implementation("androidx.navigation:navigation-ui:2.4.1")
 }
