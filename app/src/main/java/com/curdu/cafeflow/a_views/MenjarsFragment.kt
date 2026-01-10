@@ -1,4 +1,4 @@
-package com.curdu.cafeflow.views
+package com.curdu.cafeflow.a_views
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
