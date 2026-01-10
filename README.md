@@ -7,13 +7,13 @@
 ---
 
 La aplicació ha de contenir les següents pantalles:
-- ActivityLogin
-- ActivityRegistre
-- ActivityMenu
-- FragmentMenjar
-- FragmentBeguda
-- FragmentPostres
-- FragmentTotal
+- [x] ActivityLogin
+- [x] ActivityRegistre
+- [x] ActivityMenu
+- [ ] FragmentMenjar
+- [ ] FragmentBeguda
+- [ ] FragmentPostres
+- [ ] FragmentTotal
 
 Cada pantalla ha de cumplir uns requisits especificats a continuació:
 
