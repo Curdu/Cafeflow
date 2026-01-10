@@ -10,5 +10,7 @@ open class Producte(
     @ColumnInfo(name = "preu")
     open var preu: Double,
     @ColumnInfo(name = "nom")
-    open var nom: String
+    open var nom: String,
+    @ColumnInfo(name = "img_url")
+    open var imgUrl: String
 )

@@ -17,5 +17,7 @@ data class Beguda(
     override var nom: String,
 
     @ColumnInfo(name = "preu")
-    override var preu: Double
-) : Producte(id, preu, nom)
+    override var preu: Double,
+    @ColumnInfo(name = "img_url")
+    override var imgUrl: String
+) : Producte(id, preu, nom, imgUrl)

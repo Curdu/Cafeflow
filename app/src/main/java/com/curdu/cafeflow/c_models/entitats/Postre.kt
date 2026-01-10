@@ -20,5 +20,7 @@ data class Postre(
     override var nom: String = "",
 
     @ColumnInfo(name = "preu")
-    override var preu: Double = 0.0
-) : Producte(id, preu, nom)
+    override var preu: Double = 0.0,
+    @ColumnInfo(name = "img_url")
+    override var imgUrl: String
+) : Producte(id, preu, nom, imgUrl)
