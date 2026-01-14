@@ -3,29 +3,30 @@ package com.curdu.cafeflow.c_models.repositoris
 import android.content.Context
 import androidx.lifecycle.LiveData
 import com.curdu.cafeflow.c_models.bbdd.DatabaseConnection
-import com.curdu.cafeflow.c_models.entitats.Postre
+import com.curdu.cafeflow.c_models.entitats.Beguda
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
-class PostresRepositori {
+class BegudesRepositori {
 
     companion object {
         var repositori_database: DatabaseConnection? = null
 
-        var postres: LiveData<List<Postre>>? = null
+        var begudes: LiveData<List<Beguda>>? = null
 
         fun inicialitzarBD(context: Context): DatabaseConnection {
             return DatabaseConnection.getDatabase(context)
         }
 
-        fun obtenirPostres(context: Context): LiveData<List<Postre>>? {
+        fun obtenirBegudes(context: Context): LiveData<List<Beguda>>? {
             repositori_database = inicialitzarBD(context)
 
             CoroutineScope(IO).launch {
-                postres = repositori_database!!.postreDao().obtenirPostres()
+                begudes = repositori_database!!.begudaDao().obtenirBegudes()
+
             }
-            return postres
+            return begudes
         }
     }
 }

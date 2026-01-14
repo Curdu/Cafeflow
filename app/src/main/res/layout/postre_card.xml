@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="186dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/postreImageView"
+                android:layout_width="141dp"
+                android:layout_height="186dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/outline_cookie_24" />
+
+            <TextView
+                android:id="@+id/titolPostreText"
+                android:layout_width="239dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="16dp"
+                android:text="Postre"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/postreImageView"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/preuPostreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="00.00 €"
+                app:layout_constraintStart_toStartOf="@+id/titolPostreText"
+                app:layout_constraintTop_toBottomOf="@+id/titolPostreText" />
+
+            <Button
+                android:id="@+id/afegirPostreButton"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_width="178dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="116dp"
+                android:layout_marginEnd="52dp"
+                android:text="Afegir"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/casolaPostreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Casolà"
+                app:layout_constraintStart_toEndOf="@+id/preuPostreText"
+                app:layout_constraintTop_toTopOf="@+id/preuPostreText" />
+
+            <TextView
+                android:id="@+id/caloriesPostreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="0 kcal"
+                app:layout_constraintStart_toEndOf="@+id/casolaPostreText"
+                app:layout_constraintTop_toTopOf="@+id/casolaPostreText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

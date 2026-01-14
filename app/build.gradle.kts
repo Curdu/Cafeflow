@@ -39,6 +39,7 @@ android {
     }
     buildFeatures {
         dataBinding = true
+        viewBinding = true
     }
     dataBinding {
         enable = true
@@ -60,4 +61,5 @@ dependencies {
     ksp("androidx.room:room-compiler:2.6.1")
     implementation("androidx.navigation:navigation-fragment:2.4.1")
     implementation("androidx.navigation:navigation-ui:2.4.1")
+    implementation("com.squareup.picasso:picasso:2.8")
 }

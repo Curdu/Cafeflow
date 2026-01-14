@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                 val intent = Intent(this, MenuActivity::class.java)
                 intent.putExtra("usuari_actiu", usuari)
                 Log.println(Log.INFO, "Login", "Usuari $nom ha iniciat sessió correctament")
-                Toast.makeText(this, "S'ha iniciat la sessió correctament", Toast.LENGTH_LONG)
+                Toast.makeText(this, "S'ha iniciat la sessió correctament", Toast.LENGTH_LONG).show()
                 startActivity(intent)
             }catch (e : RuntimeException) {
                 Log.println(Log.INFO, "Login", e.message.toString())
