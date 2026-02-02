@@ -3,6 +3,8 @@ plugins {
     alias(libs.plugins.kotlin.android)
 
     alias(libs.plugins.google.devtools.ksp)
+
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -62,4 +64,10 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment:2.4.1")
     implementation("androidx.navigation:navigation-ui:2.4.1")
     implementation("com.squareup.picasso:picasso:2.8")
+
+    implementation(platform("com.google.firebase:firebase-bom:34.8.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.7.3")
 }
