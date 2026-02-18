@@ -10,10 +10,10 @@ La aplicació ha de contenir les següents pantalles:
 - [x] ActivityLogin
 - [x] ActivityRegistre
 - [x] ActivityMenu
-- [ ] FragmentMenjar
-- [ ] FragmentBeguda
-- [ ] FragmentPostres
-- [ ] FragmentTotal
+- [x] FragmentMenjar
+- [x] FragmentBeguda
+- [x] FragmentPostres
+- [x] FragmentTotal
 
 Cada pantalla ha de cumplir uns requisits especificats a continuació:
 
@@ -61,3 +61,21 @@ L'aplicació de Cafe flow ha de cumplir uns requisits funcionals mínims que só
 - Pagament ha de tenir un **RecyclerView** amb els productes triats i es podrà pagar la comanda. Quan es paga una comanda es guarda un **registre a la BBDD** amb el preu i l'usuari que ha pagat.
 - Cada fragment ha de tenir el seu propi **ViewModel** corresponent.
 - S'ha de crear un **SharedViewModel** per poder compartir dades entre fragments.
+
+## Fase Firebase:
+---
+
+### Objectius
+
+- Modificar l'autenticació d'usuaris per que es faci mitjançant **Authentication** de firebase.
+- Mantenir la informació dels productes en el Room de l'aplicació.
+- Crear la pantalla d'historial, on es mostraràn totes les comandes de l'usuari i el preu d'aquestes que estaran guardades a firebase
+- Guardar la comanda actual a firebase per a que quan inici sessió recuperi la comanda
+
+### Modificacions a realitzar
+
+- [x] Crear el fitxer **UserAuth** dins del paquet _firebase_ amb una funció per iniciar sessió i una altre per registrar-se.
+- [x] Modifcar **UsuariRepositori** per utilitzar aquestes funcions en comptes de les que fan servir shared_preferences
+- [ ] Crear **ComandesFirebase** dins del paquet _firebase_ on es crearán funcions corresponents a un CRUD.
+- [ ] Crear la pantalla de **Historial** amb el seu recycler view corresponent i HistorialVM.
+- [ ] Modificar el **SharedViewModel** per a que quan s'afegeixi/elimini un producte a la comanda es faci el canvi a firebase.
