@@ -9,11 +9,11 @@ data class Comanda (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: Long,
+    var id: Long = 0,
 
     @ColumnInfo(name = "preu_total")
-    var preuTotal : Double,
+    var preuTotal : Double = 0.0,
 
     @ColumnInfo(name = "usuari_comprador")
-    var usuariComprador: String
+    var usuariComprador: String = ""
 )

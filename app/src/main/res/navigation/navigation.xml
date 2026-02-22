@@ -25,4 +25,9 @@
         android:name="com.curdu.cafeflow.a_views.TotalFragment"
         android:label="fragment_total"
         tools:layout="@layout/fragment_total" />
+    <fragment
+        android:id="@+id/historialFragment"
+        android:name="com.curdu.cafeflow.a_views.HistorialFragment"
+        android:label="fragment_historial"
+        tools:layout="@layout/fragment_historial" />
 </navigation>

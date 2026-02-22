@@ -8,6 +8,7 @@ import com.curdu.cafeflow.c_models.entitats.Comanda
 import com.curdu.cafeflow.c_models.entitats.Producte
 import com.curdu.cafeflow.c_models.entitats.Usuari
 import com.curdu.cafeflow.c_models.repositoris.ComandesRepositori
+import com.curdu.cafeflow.c_models.repositoris.HistorialRepositori
 
 class SharedViewModel : ViewModel() {
 
@@ -38,12 +39,13 @@ class SharedViewModel : ViewModel() {
         this._preuTotal.value = this._preuTotal.value?.minus(producte.preu)
     }
 
-    fun pagarComanda(context: Context) {
+    suspend fun pagarComanda(context: Context) {
         val preuTotal = _llistatProductes.value!!.map { it.preu }.reduce { acc, d -> acc+d }
         val comanda = Comanda(0, preuTotal, _usuariActiu.value!!.nom)
 
         ComandesRepositori.afegirComanda(context,comanda )
-        this._llistatProductes.value = mutableListOf()
-        this._preuTotal.value = 0.0
+        HistorialRepositori.afegirComandaHistorial(comanda)
+        this._llistatProductes.postValue(mutableListOf())
+        this._preuTotal.postValue(0.0)
     }
 }

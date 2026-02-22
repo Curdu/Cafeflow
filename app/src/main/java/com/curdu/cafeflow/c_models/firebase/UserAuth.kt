@@ -9,16 +9,23 @@ import com.google.firebase.auth.FirebaseAuthInvalidUserException
 import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.firestore
 import kotlinx.coroutines.tasks.await
 
 class UserAuth {
 
     private val auth = Firebase.auth
+    private val firestore = Firebase.firestore
 
     suspend fun afegirUsuari(context: Context ,usuari: Usuari): Boolean {
-        return try{
-            auth.createUserWithEmailAndPassword(usuari.email, usuari.contrasenya).await()
-            true
+        try{
+            val id = auth.createUserWithEmailAndPassword(usuari.email, usuari.contrasenya).await().user?.uid
+            if(id != null){
+                usuari.contrasenya = ""
+                firestore.collection("usuaris").document(id).set(usuari)
+                return true
+            }
+            return false
         }catch (e: FirebaseAuthUserCollisionException){
             throw Exception("Un usuari amb aquest correu ja existeix")
         }
@@ -29,7 +36,8 @@ class UserAuth {
             val firebaseUser : FirebaseUser? = auth.signInWithEmailAndPassword(email, passwd).await().user
             return if(firebaseUser != null){
                 Log.i("Login", "Usuari iniciat sessió")
-                Usuari("","", firebaseUser.email!!)
+                val data = firestore.collection("usuaris").document(firebaseUser.uid).get().await()
+                Usuari(data["nom"].toString(),"", firebaseUser.email!!)
             }else {
                 null
             }

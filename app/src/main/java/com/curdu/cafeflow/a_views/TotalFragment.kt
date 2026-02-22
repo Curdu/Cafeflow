@@ -13,6 +13,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.curdu.cafeflow.R
 import com.curdu.cafeflow.b_viewmodels.SharedViewModel
 import com.curdu.cafeflow.databinding.FragmentTotalBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class TotalFragment : Fragment() {
 
@@ -42,7 +45,9 @@ class TotalFragment : Fragment() {
         })
 
         binding.pagatTotalButton.setOnClickListener {
-            sharedViewModel.pagarComanda(requireContext())
+            CoroutineScope(Dispatchers.IO).launch {
+                sharedViewModel.pagarComanda(requireContext())
+            }
 
         }
 
